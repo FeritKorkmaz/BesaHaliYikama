@@ -1,10 +1,12 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { Phone, Sparkles, ShieldCheck, Truck } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { PHONE_TEL } from "@/lib/data"
 import { AppointmentModal } from "@/components/appointment-modal"
+import { withBasePath } from "@/lib/asset"
 
 const CHIPS = [
   { label: "Ücretsiz Alım\u2013Teslim", icon: Truck },
@@ -27,6 +29,16 @@ export function HeroSection() {
 
       <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-10 px-4 lg:flex-row lg:gap-16 lg:px-6">
         <div className="flex flex-1 flex-col items-center text-center lg:items-start lg:text-left">
+          <Image
+            src={withBasePath("/img/newlogo.png")}
+            alt="BESA Halı Yıkama"
+            width={1400}
+            height={420}
+            unoptimized
+            priority
+            className="mb-2.5 h-auto w-[220px] max-w-[70vw] self-center sm:w-[240px] md:w-[260px] lg:w-[280px] lg:self-start"
+          />
+
           <span className="mb-4 inline-flex items-center rounded-full border border-border bg-accent/60 px-3 py-1 text-xs font-medium text-accent-foreground">
             Konya&apos;nın Güvenilir Adresi
           </span>

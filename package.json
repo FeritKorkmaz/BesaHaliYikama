@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "cross-env DEPLOY_TARGET=domain NEXT_PUBLIC_BASE_PATH= next dev --turbo",
+    "dev:domain": "cross-env DEPLOY_TARGET=domain NEXT_PUBLIC_BASE_PATH= next dev --turbo",
+    "dev:github": "cross-env DEPLOY_TARGET=github NEXT_PUBLIC_BASE_PATH=/BesaHaliYikama next dev --turbo",
     "build": "next build",
     "build:pages": "npm run build:pages:domain",
     "build:pages:github": "cross-env DEPLOY_TARGET=github NEXT_PUBLIC_BASE_PATH=/BesaHaliYikama next build && powershell -NoProfile -Command \"Remove-Item -Recurse -Force docs -ErrorAction SilentlyContinue; Copy-Item -Recurse -Force out docs\"",

@@ -41,6 +41,8 @@ export function SiteHeader() {
     }
   }
 
+  const showHeaderLogo = scrolled || activeSection !== "#hero"
+
   return (
     <header
       className={cn(
@@ -57,7 +59,11 @@ export function SiteHeader() {
             e.preventDefault()
             handleNavClick("#hero")
           }}
-          className="flex items-center"
+          className={cn(
+            "flex shrink-0 items-center transition-opacity duration-300",
+            showHeaderLogo ? "opacity-100" : "pointer-events-none opacity-0"
+          )}
+          aria-hidden={!showHeaderLogo}
         >
           <Image
             src={withBasePath("/img/newlogo.png")}
@@ -66,7 +72,7 @@ export function SiteHeader() {
             height={420}
             unoptimized
             priority
-            className="h-10 w-auto sm:h-11 lg:h-12"
+            className="h-[3.75rem] w-auto sm:h-[3.75rem] md:h-[2.625rem] lg:h-[3.375rem]"
           />
         </a>
 
