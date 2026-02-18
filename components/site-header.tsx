@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Menu, X, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { NAV_ITEMS, PHONE_TEL } from "@/lib/data"
+import { withBasePath } from "@/lib/asset"
 import { cn } from "@/lib/utils"
 
 export function SiteHeader() {
@@ -59,10 +60,11 @@ export function SiteHeader() {
           className="flex items-center"
         >
           <Image
-            src="/img/newlogo.png"
+            src={withBasePath("/img/newlogo.png")}
             alt="Besa Halı Yıkama logosu"
             width={1400}
             height={420}
+            unoptimized
             priority
             className="h-10 w-auto sm:h-11 lg:h-12"
           />

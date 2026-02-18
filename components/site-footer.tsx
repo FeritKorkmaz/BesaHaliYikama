@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { NAV_ITEMS, PHONE, PHONE_TEL, ADDRESS } from "@/lib/data";
+import { withBasePath } from "@/lib/asset";
 
 export function SiteFooter() {
   return (
@@ -10,10 +11,11 @@ export function SiteFooter() {
           <div>
             <div className="flex items-center">
               <Image
-                src="/img/newlogo.png"
+                src={withBasePath("/img/newlogo.png")}
                 alt="Besa Halı Yıkama logosu"
                 width={1400}
                 height={420}
+                unoptimized
                 className="h-14 w-auto sm:h-16"
               />
             </div>

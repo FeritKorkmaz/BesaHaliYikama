@@ -15,6 +15,7 @@ import {
   Package,
   type LucideIcon,
 } from "lucide-react";
+import { withBasePath } from "@/lib/asset";
 
 export const NAV_ITEMS = [
   { label: "Ana Sayfa", href: "#hero" },
@@ -186,37 +187,37 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: 1,
     caption: "Makine halısı yıkama",
     category: "hali",
-    image: "/img/makine-halisi-yikama.png",
+    image: withBasePath("/img/makine-halisi-yikama.png"),
   },
   {
     id: 2,
     caption: "El dokuması halı bakımı",
     category: "hali",
-    image: "/img/el-dokumasi-hali-bakimi.png",
+    image: withBasePath("/img/el-dokumasi-hali-bakimi.png"),
   },
   {
     id: 3,
     caption: "Koltuk yıkama",
     category: "koltuk",
-    image: "/img/koltuk-yikama.png",
+    image: withBasePath("/img/koltuk-yikama.png"),
   },
   {
     id: 4,
     caption: "Stor perde yıkama",
     category: "perde",
-    image: "/img/stor-perde-yikama.png",
+    image: withBasePath("/img/stor-perde-yikama.png"),
   },
   {
     id: 5,
     caption: "Halı kurutma alanı",
     category: "hali",
-    image: "/img/hali-kurutma-alani.png",
+    image: withBasePath("/img/hali-kurutma-alani.png"),
   },
   {
     id: 6,
     caption: "Paketleme ve teslimat",
     category: "hali",
-    image: "/img/paketleme-teslimat.png",
+    image: withBasePath("/img/paketleme-teslimat.png"),
   },
 ];
 

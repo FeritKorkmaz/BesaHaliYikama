@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import { Toaster } from '@/components/ui/sonner'
+import { withBasePath } from '@/lib/asset'
 
 import './globals.css'
 
@@ -14,9 +15,9 @@ export const metadata: Metadata = {
     'Konya Meram bölgesinde profesyonel halı yıkama, koltuk yıkama ve perde yıkama hizmeti. Ücretsiz alım-teslimat, modern ekipman ve kalite kontrol.',
   keywords: ['halı yıkama', 'koltuk yıkama', 'perde yıkama', 'Konya', 'Meram', 'Besa'],
   icons: {
-    icon: '/img/newlogo.png',
-    shortcut: '/img/newlogo.png',
-    apple: '/img/newlogo.png',
+    icon: withBasePath('/img/newlogo.png'),
+    shortcut: withBasePath('/img/newlogo.png'),
+    apple: withBasePath('/img/newlogo.png'),
   },
   openGraph: {
     title: 'Besa Halı Yıkama | Konya Profesyonel Halı, Koltuk ve Perde Yıkama',
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     locale: 'tr_TR',
     images: [
       {
-        url: '/img/newlogo.png',
+        url: withBasePath('/img/newlogo.png'),
         width: 1400,
         height: 420,
         alt: 'Besa Halı Yıkama',
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     title: 'Besa Halı Yıkama',
     description:
       'Konya Meram bölgesinde profesyonel halı yıkama, koltuk yıkama ve perde yıkama hizmeti.',
-    images: ['/img/newlogo.png'],
+    images: [withBasePath('/img/newlogo.png')],
   },
 }
 
