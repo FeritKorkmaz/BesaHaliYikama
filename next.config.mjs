@@ -2,16 +2,18 @@
 const repo = "BesaHaliYikama";
 const isProd = process.env.NODE_ENV === "production";
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
   images: { unoptimized: true },
-
-  // GitHub Pages project site: /REPO_NAME/
-  basePath: isProd ? `/${repo}` : undefined,
-  assetPrefix: isProd ? `/${repo}/` : undefined,
-
-  // export’ta linklerin düzgün çalışması için iyi olur
   trailingSlash: true,
+
+  ...(isProd
+    ? {
+        basePath: `/${repo}`,
+        assetPrefix: `/${repo}`,
+      }
+    : {}),
 };
 
 export default nextConfig;
