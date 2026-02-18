@@ -186,37 +186,37 @@ export const GALLERY_ITEMS: GalleryItem[] = [
     id: 1,
     caption: "Makine halısı yıkama",
     category: "hali",
-    image: "/img/Makine-halısı-yıkama.png",
+    image: "/img/makine-halisi-yikama.png",
   },
   {
     id: 2,
     caption: "El dokuması halı bakımı",
     category: "hali",
-    image: "/img/El dokuması-halı-bakımı.png",
+    image: "/img/el-dokumasi-hali-bakimi.png",
   },
   {
     id: 3,
     caption: "Koltuk yıkama",
     category: "koltuk",
-    image: "/img/Koltuk-yıkama.png",
+    image: "/img/koltuk-yikama.png",
   },
   {
     id: 4,
     caption: "Stor perde yıkama",
     category: "perde",
-    image: "/img/Stor-perde-yıkama.png",
+    image: "/img/stor-perde-yikama.png",
   },
   {
     id: 5,
     caption: "Halı kurutma alanı",
     category: "hali",
-    image: "/img/Halı-kurutma-alanı.png",
+    image: "/img/hali-kurutma-alani.png",
   },
   {
     id: 6,
     caption: "Paketleme ve teslimat",
     category: "hali",
-    image: "/img/Paketleme-teslimat.png",
+    image: "/img/paketleme-teslimat.png",
   },
 ];
 
