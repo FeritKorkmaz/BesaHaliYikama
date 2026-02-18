@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev --turbo",
     "build": "next build",
-    "build:pages": "next build && powershell -NoProfile -Command \"Remove-Item -Recurse -Force docs -ErrorAction SilentlyContinue; Copy-Item -Recurse -Force out docs\"",
+    "build:pages": "npm run build:pages:domain",
+    "build:pages:github": "cross-env DEPLOY_TARGET=github NEXT_PUBLIC_BASE_PATH=/BesaHaliYikama next build && powershell -NoProfile -Command \"Remove-Item -Recurse -Force docs -ErrorAction SilentlyContinue; Copy-Item -Recurse -Force out docs\"",
+    "build:pages:domain": "cross-env DEPLOY_TARGET=domain NEXT_PUBLIC_BASE_PATH= next build && powershell -NoProfile -Command \"Remove-Item -Recurse -Force docs -ErrorAction SilentlyContinue; Copy-Item -Recurse -Force out docs\"",
     "lint": "next lint"
   },
   "dependencies": {
@@ -64,6 +66,7 @@
     "@types/node": "^22",
     "@types/react": "19.2.7",
     "@types/react-dom": "19.2.3",
+    "cross-env": "^7.0.3",
     "postcss": "^8.5",
     "tailwindcss": "^3.4.17",
     "typescript": "5.7.3"

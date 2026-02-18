@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
+const target = process.env.DEPLOY_TARGET ?? "github";
 const repo = "BesaHaliYikama";
-const isProd = process.env.NODE_ENV === "production";
+const isGithub = target === "github";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -8,7 +9,7 @@ const nextConfig = {
   images: { unoptimized: true },
   trailingSlash: true,
 
-  ...(isProd
+  ...(isGithub
     ? {
         basePath: `/${repo}`,
         assetPrefix: `/${repo}`,
