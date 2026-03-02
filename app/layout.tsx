@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import { Toaster } from '@/components/ui/sonner'
 import { withBasePath } from '@/lib/asset'
 
@@ -58,6 +59,18 @@ export default function RootLayout({
   return (
     <html lang="tr" className="scroll-smooth">
       <body className="font-sans antialiased">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17985426772"
+          strategy="beforeInteractive"
+        />
+        <Script id="google-ads-gtag" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17985426772');
+          `}
+        </Script>
         {children}
         <Toaster position="top-center" />
       </body>
